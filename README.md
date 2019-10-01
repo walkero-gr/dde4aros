@@ -50,3 +50,6 @@ The benefits of this solution for working on AROS development or your own applic
 ## Available tags
 * latest
 * 1.0
+
+### Credits
+This docker image installation is based on http://vmwaros.blogspot.com/2019/09/setting-up-64bit-linux-development-env.html by Paolo Besser
