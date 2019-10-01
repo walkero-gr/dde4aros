@@ -6,6 +6,5 @@ TAG=1.0
 echo "------ HOOK START - BUILD -------"
 
 docker build -t $REPO:$TAG .
-docker build -t $REPO:latest .
 
 echo "------ HOOK END - BUILD -------"
