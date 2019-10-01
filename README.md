@@ -19,7 +19,7 @@ Let's build AROS on this Development Environment. I assume that you have GIT and
     ```
 4. After a while the AROS sources will be in your folder under a new directory. Now it's time to start a container to build the sources.
     ```bash
-    docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:1.0
+    docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest
     ```
 5. When you use the above command you will get into the docker Development Environment for AROS. So you will see in your terminal something like:
     ```bash

@@ -13,9 +13,10 @@ build:
 
 buildnc:
 	docker build --no-cache -t $(REPO):$(TAG) .
-	docker build --no-cache -t $(REPO):latest .
+	docker build -t $(REPO):latest .
 
 push:
 	docker push $(REPO):$(TAG)
+	docker push $(REPO):latest
 
 release: build push
