@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 REPO=walkero/dde4aros
-TAG=1.0
+TAG=latest
 
 echo "------ HOOK START - BUILD -------"
 
