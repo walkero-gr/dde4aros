@@ -1,7 +1,6 @@
--include env_make
 
 REPO ?= walkero/dde4aros
-TAG ?= 1.0
+TAG ?= 1.1
 
 .PHONY: build buildnc push release
 

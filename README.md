@@ -1,3 +1,6 @@
+[![Build Status](https://drone-gh.intercube.gr/api/badges/walkero-gr/dde4aros/status.svg)](https://drone-gh.intercube.gr/walkero-gr/dde4aros)
+[![Docker Pulls](https://img.shields.io/docker/pulls/walkero/dde4aros?color=brightgreen)](https://hub.docker.com/r/walkero/dde4aros)
+
 # dde4aros
 **dde4aros** stands for **d**ocker **D**evelopment **E**nvironment for **AROS**. Using this docker image you are able to compile AROS from sources on any system where docker is installed.
 
@@ -37,6 +40,9 @@ Let's build AROS on this Development Environment. I assume that you have GIT and
     git clone https://github.com/aros-development-team/AROS.git
     ```
 1. Run the docker image, as it is shown above
+   ```bash
+   docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest
+   ```
 1. Do the following to compile AROS
     ```bash
     cd AROS
@@ -47,9 +53,34 @@ Let's build AROS on this Development Environment. I assume that you have GIT and
     ```bash
     make -j 2 bootiso-quick
     ```
-1. To get out the docker container just type `exit` and press enter.
-1. When you exit the container is deleted, but NOT your code, as they remain in the host machine.
+1. To get out of the docker container just type `exit` and press enter.
+1. When you exit the container is deleted, but **NOT** your code, as they remain in the host machine.
 1. To get back in, just use the docker command from step 4
+
+
+## Build ApolloOS for Vampire
+Let's build ApolloOS for Vampire on this Development Environment. I assume that you have GIT and and IDE installed on your system.
+
+1. Open a terminal and go into the directory where you want to pull the code for ApolloOS
+2. Now, clone from github.com
+    ```bash
+    git clone --recursive https://github.com/ApolloTeam-dev/AROS.git -b master-new ApolloOS_Master
+    ```
+3. Run the docker image, as it is shown above
+   ```bash
+   docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest
+   ```
+4. Do the following to compile AROS
+    ```bash
+    cd ApolloOS_Master
+    ./rebuild_rom.sh
+    ```
+5. To get out of the docker container just type `exit` and press enter.
+6. When you exit the container is deleted, but **NOT** your code, as they remain in the host machine.
+7. To get back in, just use the docker command from step 4
+
+More info about building ApolloOS can be found at https://github.com/ApolloTeam-dev/AROS/wiki/Building
+
 
 ## Benefits
 There are a lot of benefits of such a solution, for a development environment to work on AROS or your very own projects:
@@ -59,9 +90,6 @@ There are a lot of benefits of such a solution, for a development environment to
 * Use any tools you like for development on the host computer (Version Control Systems, IDE etc.)
 * Development Environment isolation
 
-## Available tags
-* latest
-* 1.0
 
 ### Credits
 This docker image installation is based on http://vmwaros.blogspot.com/2019/09/setting-up-64bit-linux-development-env.html by Paolo Besser
