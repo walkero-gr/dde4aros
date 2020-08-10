@@ -1,0 +1,50 @@
+---
+kind: pipeline
+name: build-images
+
+steps:
+  - name: build-image-latest
+    image: plugins/docker
+    settings:
+      repo: walkero/dde4aros
+      tags:
+        - "latest"
+      cache_from:
+        - walkero/dde4aros:latest
+      dockerfile: Dockerfile
+      username:
+        from_secret: DOCKERHUB_USERNAME
+      password:
+        from_secret: DOCKERHUB_PASSWORD
+
+trigger:
+  branch:
+    include:
+    - master
+  event:
+    include:
+    - push
+
+---
+kind: pipeline
+name: build-images-from-tag
+
+steps:
+  - name: build-image-from-tag
+    image: plugins/docker
+    settings:
+      repo: walkero/dde4aros
+      tags:
+        - ${DRONE_TAG/\//-}-ppc
+      cache_from:
+        - walkero/dde4aros:latest
+      dockerfile: Dockerfile
+      username:
+        from_secret: DOCKERHUB_USERNAME
+      password:
+        from_secret: DOCKERHUB_PASSWORD
+
+trigger:
+  event:
+    include:
+    - tag
