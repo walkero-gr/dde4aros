@@ -35,7 +35,7 @@ steps:
     settings:
       repo: walkero/dde4aros
       tags:
-        - ${DRONE_TAG/\//-}-ppc
+        - ${DRONE_TAG/\//-}
       cache_from:
         - walkero/dde4aros:latest
       dockerfile: Dockerfile
