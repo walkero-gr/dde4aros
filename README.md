@@ -82,13 +82,16 @@ Let's build ApolloOS for Vampire on this Development Environment. I assume that 
 More info about building ApolloOS can be found at https://github.com/ApolloTeam-dev/AROS/wiki/Building
 
 
-## Benefits
-There are a lot of benefits of such a solution, for a development environment to work on AROS or your very own projects:
+## Benefits of using docker images for development
+There are a lot of benefits of using docker images for development, to work on AROS or your very own projects:
+* Setup your development environment on any operating system that supports docker in minutes
+* All the developers of the project have the same development environment
 * Small footprint of the Development Environment
 * docker images can be updated. The developers can use the `latest` TAG to get the latest version, or specific version TAG, to stick on a specific version
 * The codes are shared between the host computer and the docker container
 * Use any tools you like for development on the host computer (Version Control Systems, IDE etc.)
 * Development Environment isolation
+* Docker images can be used on CI/CD implementation to automate processes
 
 
 ### Credits
