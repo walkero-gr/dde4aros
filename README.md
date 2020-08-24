@@ -17,7 +17,7 @@ To create a container with the **dde4aros** docker image, so that you are able t
 ```bash
 cd your-apps-folder
 
-docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest
+docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest /bin/bash
 ```
 When you use the above command you will get into the docker Development Environment for AROS. So you will see in your terminal something like:
 ```bash
@@ -41,7 +41,7 @@ Let's build AROS on this Development Environment. I assume that you have GIT and
     ```
 1. Run the docker image, as it is shown above
    ```bash
-   docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest
+   docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest /bin/bash
    ```
 1. Do the following to compile AROS
     ```bash
@@ -68,7 +68,7 @@ Let's build ApolloOS for Vampire on this Development Environment. I assume that 
     ```
 3. Run the docker image, as it is shown above
    ```bash
-   docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest
+   docker run -it --rm --name dde4aros -v "$PWD":/usr/src -w /usr/src walkero/dde4aros:latest /bin/bash
    ```
 4. Do the following to compile AROS
     ```bash
